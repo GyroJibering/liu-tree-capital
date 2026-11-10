@@ -24,7 +24,6 @@
     document.querySelectorAll('[data-en]').forEach(el => {
       el.replaceChildren(...el.dataset[language].split('\\n').flatMap((line, i) => i ? [document.createElement('br'), document.createTextNode(line)] : [document.createTextNode(line)]));
     });
-    document.querySelectorAll('.zh-addition').forEach(el => { el.hidden = !zh; });
     document.querySelector('.lang-en').classList.toggle('active', !zh);
     document.querySelector('.lang-zh').classList.toggle('active', zh);
     languageButton.setAttribute('aria-label', zh ? 'Switch to English' : '切换至中文');
